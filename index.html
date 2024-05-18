@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teledoc WebApp</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 80%; margin: 0 auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input[type="text"], input[type="password"], input[type="email"], select { width: 100%; padding: 8px; }
+        .btn { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        .btn:hover { background-color: #45a049; }
+        .header { margin-bottom: 30px; }
+        .header h1 { margin: 0; }
+        .dashboard { display: flex; }
+        .sidebar { width: 20%; padding: 20px; background-color: #f4f4f4; }
+        .content { width: 80%; padding: 20px; }
+        .content h2 { margin-top: 0; }
+    </style>
+</head>
+<body>
+
+    <!-- Login Page -->
+    <div class="container" id="loginPage">
+        <div class="header">
+            <h1>Login</h1>
+        </div>
+        <div class="form-group">
+            <label for="userType">User Type</label>
+            <select id="userType">
+                <option>Hospital Doctor</option>
+                <option>Online Consultant Doctors</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="userId">User ID (Email)</label>
+            <input type="text" id="userId" />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" />
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="terms" />
+            <label for="terms">Terms and Conditions</label>
+        </div>
+        <div class="form-group">
+            <button class="btn">Login</button>
+        </div>
+        <div class="form-group">
+            <a href="#">Forgot Password</a>
+            <a href="patient_register_form.html">Register</a>
+        </div>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="container" id="registrationPage" style="display:none;">
+        <div class="header">
+            <h1>Registration Form</h1>
+        </div>
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" />
+        </div>
+        <div class="form-group">
+            <label for="middleName">Middle Name</label>
+            <input type="text" id="middleName" />
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" />
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" />
+        </div>
+        <div class="form-group">
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="text" id="mobileNumber" />
+        </div>
+        <div class="form-group">
+            <label for="passwordReg">Password</label>
+            <input type="password" id="passwordReg" />
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" />
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Others</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" />
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" />
+        </div>
+        <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" id="state" />
+        </div>
+        <div class="form-group">
+            <label for="councilName">Council Name</label>
+            <select id="councilName">
+                <option>Medical Board 1</option>
+                <option>Medical Board 2</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="yearOfRegistration">Year of Registration</label>
+            <input type="text" id="yearOfRegistration" />
+        </div>
+        <div class="form-group">
+            <label for="specialty">Specialty/Super specialty</label>
+            <input type="text" id="specialty" />
+        </div>
+        <div class="form-group">
+            <button class="btn">Register</button>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="container" id="dashboardPage" style="display:none;">
+        <div class="dashboard">
+            <div class="sidebar">
+                <h3>Menu</h3>
+                <ul>
+                    <li>Dashboard</li>
+                    <li>Appointments</li>
+                    <li>Invoice and Wallet</li>
+                    <li>Profile Settings</li>
+                    <li>About Us</li>
+                    <li>Logout</li>
+                </ul>
+            </div>
+            <div class="content">
+                <h2>Welcome to the Dashboard</h2>
+                <p>Here you can manage your appointments, profile, and more.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.btn').addEventListener('click', function () {
+            document.getElementById('loginPage').style.display = 'none';
+            document.getElementById('dashboardPage').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
